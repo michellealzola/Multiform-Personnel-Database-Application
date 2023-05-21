@@ -1,6 +1,6 @@
 ﻿namespace Multiform_Personnel_Database_Application
 {
-    partial class Form1
+    partial class Details
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Details));
+            System.Windows.Forms.Label iDLabel;
+            System.Windows.Forms.Label nameLabel;
+            System.Windows.Forms.Label positionLabel;
+            System.Windows.Forms.Label hourly_Pay_RateLabel;
             this.employeeDataSet = new Multiform_Personnel_Database_Application.EmployeeDataSet();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeTableAdapter = new Multiform_Personnel_Database_Application.EmployeeDataSetTableAdapters.EmployeeTableAdapter();
@@ -47,17 +51,18 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.employeeBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.employeeDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.iDTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.positionTextBox = new System.Windows.Forms.TextBox();
+            this.hourly_Pay_RateTextBox = new System.Windows.Forms.TextBox();
+            iDLabel = new System.Windows.Forms.Label();
+            nameLabel = new System.Windows.Forms.Label();
+            positionLabel = new System.Windows.Forms.Label();
+            hourly_Pay_RateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingNavigator)).BeginInit();
             this.employeeBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // employeeDataSet
@@ -106,7 +111,7 @@
             this.employeeBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.employeeBindingNavigator.Name = "employeeBindingNavigator";
             this.employeeBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.employeeBindingNavigator.Size = new System.Drawing.Size(470, 25);
+            this.employeeBindingNavigator.Size = new System.Drawing.Size(297, 25);
             this.employeeBindingNavigator.TabIndex = 0;
             this.employeeBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -204,73 +209,96 @@
             this.employeeBindingNavigatorSaveItem.Text = "Save Data";
             this.employeeBindingNavigatorSaveItem.Click += new System.EventHandler(this.employeeBindingNavigatorSaveItem_Click);
             // 
-            // employeeDataGridView
+            // iDLabel
             // 
-            this.employeeDataGridView.AutoGenerateColumns = false;
-            this.employeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.employeeDataGridView.DataSource = this.employeeBindingSource;
-            this.employeeDataGridView.Location = new System.Drawing.Point(12, 28);
-            this.employeeDataGridView.Name = "employeeDataGridView";
-            this.employeeDataGridView.Size = new System.Drawing.Size(443, 306);
-            this.employeeDataGridView.TabIndex = 1;
+            iDLabel.AutoSize = true;
+            iDLabel.Location = new System.Drawing.Point(12, 43);
+            iDLabel.Name = "iDLabel";
+            iDLabel.Size = new System.Drawing.Size(21, 13);
+            iDLabel.TabIndex = 1;
+            iDLabel.Text = "ID:";
             // 
-            // dataGridViewTextBoxColumn1
+            // iDTextBox
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "ID", true));
+            this.iDTextBox.Location = new System.Drawing.Point(105, 40);
+            this.iDTextBox.Name = "iDTextBox";
+            this.iDTextBox.Size = new System.Drawing.Size(164, 20);
+            this.iDTextBox.TabIndex = 2;
             // 
-            // dataGridViewTextBoxColumn2
+            // nameLabel
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(12, 69);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(38, 13);
+            nameLabel.TabIndex = 3;
+            nameLabel.Text = "Name:";
             // 
-            // dataGridViewTextBoxColumn3
+            // nameTextBox
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Position";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Position";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Name", true));
+            this.nameTextBox.Location = new System.Drawing.Point(105, 66);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(164, 20);
+            this.nameTextBox.TabIndex = 4;
             // 
-            // dataGridViewTextBoxColumn4
+            // positionLabel
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Hourly_Pay_Rate";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Hourly_Pay_Rate";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            positionLabel.AutoSize = true;
+            positionLabel.Location = new System.Drawing.Point(12, 95);
+            positionLabel.Name = "positionLabel";
+            positionLabel.Size = new System.Drawing.Size(47, 13);
+            positionLabel.TabIndex = 5;
+            positionLabel.Text = "Position:";
             // 
-            // button1
+            // positionTextBox
             // 
-            this.button1.Location = new System.Drawing.Point(12, 359);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(443, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "See Detail View";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.positionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Position", true));
+            this.positionTextBox.Location = new System.Drawing.Point(105, 92);
+            this.positionTextBox.Name = "positionTextBox";
+            this.positionTextBox.Size = new System.Drawing.Size(164, 20);
+            this.positionTextBox.TabIndex = 6;
             // 
-            // Form1
+            // hourly_Pay_RateLabel
+            // 
+            hourly_Pay_RateLabel.AutoSize = true;
+            hourly_Pay_RateLabel.Location = new System.Drawing.Point(12, 121);
+            hourly_Pay_RateLabel.Name = "hourly_Pay_RateLabel";
+            hourly_Pay_RateLabel.Size = new System.Drawing.Size(87, 13);
+            hourly_Pay_RateLabel.TabIndex = 7;
+            hourly_Pay_RateLabel.Text = "Hourly Pay Rate:";
+            // 
+            // hourly_Pay_RateTextBox
+            // 
+            this.hourly_Pay_RateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Hourly_Pay_Rate", true));
+            this.hourly_Pay_RateTextBox.Location = new System.Drawing.Point(105, 118);
+            this.hourly_Pay_RateTextBox.Name = "hourly_Pay_RateTextBox";
+            this.hourly_Pay_RateTextBox.Size = new System.Drawing.Size(164, 20);
+            this.hourly_Pay_RateTextBox.TabIndex = 8;
+            // 
+            // Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 402);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.employeeDataGridView);
+            this.ClientSize = new System.Drawing.Size(297, 153);
+            this.Controls.Add(iDLabel);
+            this.Controls.Add(this.iDTextBox);
+            this.Controls.Add(nameLabel);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(positionLabel);
+            this.Controls.Add(this.positionTextBox);
+            this.Controls.Add(hourly_Pay_RateLabel);
+            this.Controls.Add(this.hourly_Pay_RateTextBox);
             this.Controls.Add(this.employeeBindingNavigator);
-            this.Name = "Form1";
-            this.Text = "Multiform Personnel Database Application";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "Details";
+            this.Text = "Details";
+            this.Load += new System.EventHandler(this.Details_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingNavigator)).EndInit();
             this.employeeBindingNavigator.ResumeLayout(false);
             this.employeeBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,12 +323,9 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton employeeBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView employeeDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox iDTextBox;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox positionTextBox;
+        private System.Windows.Forms.TextBox hourly_Pay_RateTextBox;
     }
 }
-
